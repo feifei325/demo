@@ -1,17 +1,4 @@
 def quicksort_simple(arr):
-    """
-    快速排序算法实现 (简单版本)
-    
-    Args:
-        arr (list): 待排序的列表
-    
-    Returns:
-        list: 排序后的列表
-    
-    Example:
-        >>> quicksort_simple([64, 34, 25, 12, 22, 11, 90])
-        [11, 12, 22, 25, 34, 64, 90]
-    """
     if len(arr) <= 1:
         return arr
     
@@ -24,15 +11,6 @@ def quicksort_simple(arr):
 
 
 def quicksort(arr):
-    """
-    Quicksort algorithm implementation with in-place sorting (Lomuto partition).
-    
-    Args:
-        arr: List of comparable elements to be sorted
-        
-    Returns:
-        List: Sorted list in ascending order
-    """
     if len(arr) <= 1:
         return arr
     
@@ -42,14 +20,6 @@ def quicksort(arr):
 
 
 def _quicksort_helper(arr, low, high):
-    """
-    Helper function for recursive quicksort implementation.
-    
-    Args:
-        arr: List to be sorted
-        low: Starting index
-        high: Ending index
-    """
     if low < high:
         pivot_index = partition(arr, low, high)
         _quicksort_helper(arr, low, pivot_index - 1)
@@ -57,14 +27,6 @@ def _quicksort_helper(arr, low, high):
 
 
 def quicksort_inplace(arr, low=0, high=None):
-    """
-    原地快速排序算法实现
-    
-    参数:
-        arr: 待排序的列表
-        low: 起始索引
-        high: 结束索引
-    """
     if high is None:
         high = len(arr) - 1
         
@@ -75,17 +37,6 @@ def quicksort_inplace(arr, low=0, high=None):
 
 
 def partition(arr, low, high):
-    """
-    分区函数，将数组分为小于和大于基准值的两部分
-    
-    参数:
-        arr: 数组
-        low: 起始索引
-        high: 结束索引
-        
-    返回:
-        基准值的最终位置
-    """
     pivot = arr[high]
     i = low - 1
     
@@ -99,15 +50,6 @@ def partition(arr, low, high):
 
 
 def quicksort_iterative(arr):
-    """
-    Iterative implementation of quicksort algorithm.
-    
-    Args:
-        arr: List of comparable elements to be sorted
-        
-    Returns:
-        List: Sorted list in ascending order
-    """
     if len(arr) <= 1:
         return arr
     
@@ -126,7 +68,6 @@ def quicksort_iterative(arr):
 
 
 def test_quicksort():
-    """测试快速排序函数"""
     arr1 = [64, 34, 25, 12, 22, 11, 90]
     expected1 = [11, 12, 22, 25, 34, 64, 90]
     result1 = quicksort_simple(arr1.copy())
